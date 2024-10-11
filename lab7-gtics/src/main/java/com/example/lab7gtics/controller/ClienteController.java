@@ -17,11 +17,16 @@ public class ClienteController {
         this.obraRepository = obraRepository;
     }
 
-    @GetMapping({"Cliente", "Cliente/Peliculas"})
+    @GetMapping({ "Cliente/Peliculas"})
     public String peliculas(Model model) {
         List<Obra> listaObras =  obraRepository.findAll();
 
         model.addAttribute("obras", listaObras);
         return "Cliente/peliculas";
+    }
+    @GetMapping({"Cliente", "Cliente/MisReservas"})
+    public String misReservas(Model model) {
+
+        return "Cliente/MisReservas";
     }
 }

@@ -17,11 +17,11 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
     private String determineRedirectUrl(Authentication authentication) {
         if (authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-            return "/Admin";
+            return "/Admin/Peliculas";
         } else if (authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("GERENTE"))) {
-            return "/Gerente";
+            return "/Gerente/Reservas";
         } else if (authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("CLIENTE"))) {
-            return "/Cliente";
+            return "/Cliente/Peliculas";
 
         } else {
             return "/default";
