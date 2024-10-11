@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <title>NavbarAdmin</title>
+</head>
+<body>
+<nav th:fragment="navbarCliente">
+    <a class="btn btn-sm btn-outline-primary" th:href="@{/Cliente/Peliculas}">Peliculas<span class="sr-only">(current)</span></a>
+    <a class="btn btn-sm btn-outline-primary" th:href="@{/Gerente/MissReservass}">Mis Resesrvass <span class="sr-only">(current)</span></a>
+    <p>Bienvenido CLIENTE</p>
+    <a class="btn btn-sm btn-outline-primary" th:href="@{/Gerente/CerrarSesion}">Cerrar Sesión <span class="sr-only">(current)</span></a>
+
+</nav>
+</body>
+</html>

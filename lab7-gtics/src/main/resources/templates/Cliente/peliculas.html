@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <title>Obras</title>
+</head>
+<body>
+<div class="container">
+    <div th:insert="~{navbarCliente.html :: navbarCliente}"></div>
+    <h2>Lista de Obras</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Título</th>
+            <th>Duracion</th>
+            <th>Fecha de estreno</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="obra, info : ${obras}">
+            <td th:text="${info.index + 1}"></td>
+            <td th:text="${obra.getTitle()}"></td>
+            <td th:text="${obra.getDuration()}"></td>
+            <td th:text="${obra.getReleaseDate()}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
